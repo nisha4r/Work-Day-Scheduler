@@ -1,6 +1,6 @@
 # Work-Day-Scheduler
 
-
+## Description
 
 This simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
 
@@ -35,12 +35,9 @@ THEN the saved events persist
 <!-- @TODO: create ticket to review/update image) -->
 ![A user clicks on slots on the color-coded calendar and edits the events.](./assets/images/work-day-scheduler.png)
 
-## Review
+## Git
 
-You are required to submit the following for review:
+* The URL of the deployed application: https://nisha4r.github.io/work-day-scheduler/
 
-* The URL of the deployed application
-
-* The URL of the GitHub repository, with a unique name and a README describing the project
-
+* The URL of the GitHub repository:  https://github.com/nisha4r/work-day-scheduler
 - - -
