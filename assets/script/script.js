@@ -30,11 +30,11 @@ $(document).ready(function () {
   // saveBtn onclick listener
   $(".saveBtn").on("click", function () {
     // Values of description and time
-    var text = $(this).siblings(".description").val();
+    var description = $(this).siblings(".description").val();
     var time = $(this).parent().attr("id");
 
     // save the time and description in localstorage
-    localStorage.setItem(time, text);
+    localStorage.setItem(time, description);
   })
 
   function scheduleTracker() {
