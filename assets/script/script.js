@@ -2,7 +2,6 @@
 $(function () {
 
   // Display the current date in the header of the page.
-  // saveBtn onclick listener
   // Todays's date
   var todayDate = dayjs().format('dddd, MMMM D');
   $("#currentDay").html(todayDate);
@@ -20,41 +19,41 @@ $(function () {
     localStorage.setItem(time, description);
   })
 
-  function scheduleTracker() {
-    //get current hour
-    var currentTime = dayjs().hour();
-    console.log("currentTime:" + currentTime);
 
-    // iterate over the each time from 9am to 5pm div elements with class attribute "time-block"
-    $(".time-block").each(function () {
+  //get current hour
+  var currentTime = dayjs().hour();
+  console.log("currentTime:" + currentTime);
 
-      var timeBlock = parseInt($(this).attr("id").split("hour-")[1]);
-      console.log("timeBlock: " + timeBlock);
+  // iterate over the each time from 9am to 5pm div elements with class attribute "time-block"
+  $(".time-block").each(function () {
 
-      // To apply the past, present, or future class to each time
-      // block by comparing the id to the current hour. 
+    var timeBlock = parseInt($(this).attr("id").split("-")[1]);
+    console.log("timeBlock: " + timeBlock);
 
-      // past time check and apply past style
-      if (timeBlock < currentTime) {
-        $(this).removeClass("present");
-        $(this).removeClass("future");
-        $(this).addClass("past");
-      }
-      //present time check and apply present style
-      else if (timeBlock === currentTime) {
-        $(this).removeClass("future");
-        $(this).removeClass("past");
-        $(this).addClass("present");
-      }
-      // apply future style for all remaining hours
-      else {
-        $(this).removeClass("past");
-        $(this).removeClass("present");
-        $(this).addClass("future");
+    // To apply the past, present, or future class to each time
+    // block by comparing the id to the current hour. 
 
-      }
-    })
-  }
+    // past time check and apply past style
+    if (timeBlock < currentTime) {
+      $(this).removeClass("present");
+      $(this).removeClass("future");
+      $(this).addClass("past");
+    }
+    //present time check and apply present style
+    else if (timeBlock === currentTime) {
+      $(this).removeClass("future");
+      $(this).removeClass("past");
+      $(this).addClass("present");
+    }
+    // apply future style for all remaining hours
+    else {
+      $(this).removeClass("past");
+      $(this).removeClass("present");
+      $(this).addClass("future");
+
+    }
+  })
+
 
   // get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements.
@@ -68,8 +67,7 @@ $(function () {
   $("#hour-16 .description").val(localStorage.getItem("hour-16"));
   $("#hour-17 .description").val(localStorage.getItem("hour-17"));
 
-  //initialize this call on load.
-  scheduleTracker();
+
 });
 
 
